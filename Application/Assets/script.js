@@ -70,16 +70,5 @@ choicesElement.addEventListener("click", () => {
 
 // The following function ends the quiz
 function endQuiz() {
-  heading.textContent = 'All done!';
-  while (content.hasChildNodes()) {
-    content.removeChild(content.firstChild);
-  }
-  var yourScore = document.createElement('p');
-  var scoreForm = document.createElement('form');
-  var enterScore = document.createElement('input');
-  enterScore.setAttribute('placeholder', 'Enter Initials');
-  scoreForm.appendChild(enterScore);
-  yourScore.textContent = 'Your final score is: ' + count;
-  content.appendChild(yourScore);
-  content.appendChild(scoreForm);
+  
 }
