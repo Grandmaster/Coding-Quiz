@@ -34,8 +34,19 @@ function displayQuestion(question, options) {
 startButton = document.getElementById("start");
 startButton.addEventListener("click", () => {
   count = 0;
+  displayQuestion(questions[count], options[count]);
+  styleButtons();
   var intro = document.getElementById("intro");
   intro.setAttribute("style", "display: none");
   startButton.setAttribute('style', 'display: none');
-  displayQuestion(questions[count], options[count]);
 });
+
+// This function gives all buttons on the page a particular style.
+function styleButtons() {
+  var buttons = document.querySelectorAll('button');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.add('btn');
+    buttons[i].classList.add('btn-primary');
+    buttons[i].setAttribute('style', 'margin-bottom: 10px');
+  }
+}
