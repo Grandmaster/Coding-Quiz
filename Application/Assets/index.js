@@ -68,10 +68,8 @@ choicesElement.addEventListener("click", () => {
   }
 });
 
-// The following function ends the quiz
+// The following function ends the quiz by opening the highscores page.
 function endQuiz() {
-  var score = count;
+  localStorage.setItem('score', secs);
   window.open('highscores.html', '_self');
-  var scoreSpan = document.getElementById('final-score');
-  scoreSpan.innerHTML = score;
 }
