@@ -1,4 +1,4 @@
-// This bit of code creates the questions and options of the quiz. It creates the quiz content.
+// This script stores the quiz content.
 var questions = [
     "What does API stand for?",
     "What event fires when a user presses a key?",
