@@ -19,7 +19,7 @@ var content = document.getElementById("content");
 var choicesElement = document.createElement("ul");
 choicesElement.id = "choices";
 function displayQuestion(question, options) {
-  while(choicesElement.hasChildNodes()) {
+  while (choicesElement.hasChildNodes()) {
     choicesElement.removeChild(choicesElement.firstChild);
   }
   for (var i = 1; i < 5; i++) {
@@ -53,13 +53,33 @@ function styleButtons() {
     buttons[i].classList.add("btn-primary");
     buttons[i].setAttribute("style", "margin-bottom: 10px");
   }
-  startButton.setAttribute('style', 'display: none');
+  startButton.setAttribute("style", "display: none");
 }
 
 // This part of the code displays the next question when an option is clicked,
 // using event propagation.
 choicesElement.addEventListener("click", () => {
   count++;
-  displayQuestion(questions[count], options[count]);
-  styleButtons();
+  if (count == questions.length || secs == 0) {
+    endQuiz();
+  } else {
+    displayQuestion(questions[count], options[count]);
+    styleButtons();
+  }
 });
+
+// The following function ends the quiz
+function endQuiz() {
+  heading.textContent = 'All done!';
+  while (content.hasChildNodes()) {
+    content.removeChild(content.firstChild);
+  }
+  var yourScore = document.createElement('p');
+  var scoreForm = document.createElement('form');
+  var enterScore = document.createElement('input');
+  enterScore.setAttribute('placeholder', 'Enter Initials');
+  scoreForm.appendChild(enterScore);
+  yourScore.textContent = 'Your final score is: ' + count;
+  content.appendChild(yourScore);
+  content.appendChild(scoreForm);
+}
