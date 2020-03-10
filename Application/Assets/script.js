@@ -70,5 +70,8 @@ choicesElement.addEventListener("click", () => {
 
 // The following function ends the quiz
 function endQuiz() {
-  
+  var score = count;
+  window.open('highscores.html', '_self');
+  var scoreSpan = document.getElementById('final-score');
+  scoreSpan.innerHTML = score;
 }
