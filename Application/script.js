@@ -14,10 +14,14 @@ var gameTime = setInterval(() => {
 }, 1000);
 
 // This function changes the html page to display a question.
+var heading = document.getElementById("content-header");
+var content = document.getElementById("content");
+var choicesElement = document.createElement("ul");
+choicesElement.id = "choices";
 function displayQuestion(question, options) {
-  var heading = document.getElementById("content-header");
-  var content = document.getElementById("content");
-  var choicesElement = document.createElement("ul");
+  while(choicesElement.hasChildNodes()) {
+    choicesElement.removeChild(choicesElement.firstChild);
+  }
   for (var i = 1; i < 5; i++) {
     var choice = options[i];
     var individualChoice = document.createElement("li");
@@ -32,21 +36,30 @@ function displayQuestion(question, options) {
 
 // This section of code begins the quiz when the start button is clicked.
 startButton = document.getElementById("start");
+count = 0;
 startButton.addEventListener("click", () => {
-  count = 0;
   displayQuestion(questions[count], options[count]);
   styleButtons();
   var intro = document.getElementById("intro");
   intro.setAttribute("style", "display: none");
-  startButton.setAttribute('style', 'display: none');
+  startButton.setAttribute("style", "display: none");
 });
 
 // This function gives all buttons on the page a particular style.
 function styleButtons() {
-  var buttons = document.querySelectorAll('button');
+  var buttons = document.querySelectorAll("button");
   for (var i = 0; i < buttons.length; i++) {
-    buttons[i].classList.add('btn');
-    buttons[i].classList.add('btn-primary');
-    buttons[i].setAttribute('style', 'margin-bottom: 10px');
+    buttons[i].classList.add("btn");
+    buttons[i].classList.add("btn-primary");
+    buttons[i].setAttribute("style", "margin-bottom: 10px");
   }
+  startButton.setAttribute('style', 'display: none');
 }
+
+// This part of the code displays the next question when an option is clicked,
+// using event propagation.
+choicesElement.addEventListener("click", () => {
+  count++;
+  displayQuestion(questions[count], options[count]);
+  styleButtons();
+});
