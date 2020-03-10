@@ -13,24 +13,29 @@ var gameTime = setInterval(() => {
   }
 }, 1000);
 
-// This section changes the html page to display a question.
-startButton = document.getElementById('start');
+// This function changes the html page to display a question.
 function displayQuestion(question, options) {
-  var heading = document.getElementById('content-header');
-  var content = document.getElementById('content');
-  var choicesElement = document.createElement('ul');
+  var heading = document.getElementById("content-header");
+  var content = document.getElementById("content");
+  var choicesElement = document.createElement("ul");
   for (var i = 1; i < 5; i++) {
     var choice = options[i];
-    var individualChoice = document.createElement('li');
-    var choiceButton = document.createElement('button');
-    choiceButton.textContent = i + ': ' + choice;
+    var individualChoice = document.createElement("li");
+    var choiceButton = document.createElement("button");
+    choiceButton.textContent = i + ": " + choice;
     individualChoice.appendChild(choiceButton);
     choicesElement.appendChild(individualChoice);
   }
   heading.textContent = question;
-  var intro = document.getElementById('intro');
-  intro.remove();
   content.appendChild(choicesElement);
 }
 
-displayQuestion(questions[2], options[2]);
+// This section of code begins the quiz when the start button is clicked.
+startButton = document.getElementById("start");
+startButton.addEventListener("click", () => {
+  count = 0;
+  var intro = document.getElementById("intro");
+  intro.setAttribute("style", "display: none");
+  startButton.setAttribute('style', 'display: none');
+  displayQuestion(questions[count], options[count]);
+});
