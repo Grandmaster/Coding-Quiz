@@ -1,0 +1,7 @@
+p, #content-header {
+    text-align: center;
+}
+.btn.btn-primary {
+    background-color: purple;
+    color: white;
+}
