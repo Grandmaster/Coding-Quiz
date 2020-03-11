@@ -1,17 +1,20 @@
 // This is the code for the Code Quiz application.
 // ==============================================
 
-// This bit of code creates and updates the timer at the top-right of the screen.
+// This function creates and updates the timer at the top-right of the screen.
 var timer = document.getElementById("timer");
 var time = document.getElementById("time-left");
 var secs = 60;
-var gameTime = setInterval(() => {
-  time.textContent = secs;
-  secs--;
-  if (secs == -1) {
-    clearInterval(gameTime);
-  }
-}, 1000);
+function beginCountDown() {
+  var gameTime = setInterval(() => {
+    time.textContent = secs;
+    secs--;
+    if (secs == 0) {
+      clearInterval(gameTime);
+      endQuiz();
+    }
+  }, 1000);
+}
 
 // This function changes the html page to display a question.
 var heading = document.getElementById("content-header");
@@ -38,6 +41,7 @@ function displayQuestion(question, options) {
 startButton = document.getElementById("start");
 count = 0;
 startButton.addEventListener("click", () => {
+  beginCountDown();
   displayQuestion(questions[count], options[count]);
   styleButtons();
   var intro = document.getElementById("intro");
@@ -60,7 +64,7 @@ function styleButtons() {
 // using event propagation.
 choicesElement.addEventListener("click", () => {
   count++;
-  if (count == questions.length || secs == 0) {
+  if (count == questions.length) {
     endQuiz();
   } else {
     displayQuestion(questions[count], options[count]);
@@ -70,6 +74,6 @@ choicesElement.addEventListener("click", () => {
 
 // The following function ends the quiz by opening the highscores page.
 function endQuiz() {
-  localStorage.setItem('score', secs);
-  window.open('highscores.html', '_self');
+  localStorage.setItem("score", secs);
+  window.open("highscores.html", "_self");
 }
