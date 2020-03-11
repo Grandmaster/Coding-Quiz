@@ -30,6 +30,7 @@ function displayQuestion(question, options) {
     var individualChoice = document.createElement("li");
     var choiceButton = document.createElement("button");
     choiceButton.textContent = i + ": " + choice;
+    choiceButton.setAttribute("data-index", i);
     individualChoice.appendChild(choiceButton);
     choicesElement.appendChild(individualChoice);
   }
@@ -41,7 +42,7 @@ function displayQuestion(question, options) {
 startButton = document.getElementById("start");
 count = 0;
 startButton.addEventListener("click", () => {
-  beginCountDown();
+  // beginCountDown();
   displayQuestion(questions[count], options[count]);
   styleButtons();
   var intro = document.getElementById("intro");
@@ -62,15 +63,35 @@ function styleButtons() {
 
 // This part of the code displays the next question when an option is clicked,
 // using event propagation.
-choicesElement.addEventListener("click", () => {
+choicesElement.addEventListener("click", event => {
   count++;
   if (count == questions.length) {
     endQuiz();
   } else {
+    checkAnswer(event);
     displayQuestion(questions[count], options[count]);
     styleButtons();
   }
 });
+
+// Function checks if the user picked the right answer or not, and displays the result
+// on the screen.
+function checkAnswer(event) {
+  var answerKey = answers[count - 1];
+  var choiceKey = event.target.getAttribute("data-index");
+  var answerDiv = document.getElementById("answers");
+  answerDiv.removeChild(answerDiv.lastChild);
+  answerDiv.style.borderTop = '1px solid';
+  var result = document.createElement("h3");
+  result.style.fontStyle = "italic";
+  if (choiceKey == answerKey) {
+    result.textContent = "Correct!";
+    answerDiv.appendChild(result);
+  } else {
+    result.textContent = "Wrong!";
+    answerDiv.appendChild(result);
+  }
+}
 
 // The following function ends the quiz by opening the highscores page.
 function endQuiz() {

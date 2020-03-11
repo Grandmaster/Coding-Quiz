@@ -19,3 +19,4 @@ var questions = [
       4: "Screen Capture"
     }
   ];
+var answers = [3, 4, 1];
