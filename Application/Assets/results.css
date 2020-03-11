@@ -10,3 +10,12 @@ p, #content-header {
     padding-top: 20px;
     margin-top: 20px;
 }
+nav {
+    height: 50px;
+}
+nav > * {
+    background-color: lightskyblue;
+    color: white;
+    margin-bottom: 0;
+    padding: 10px;
+}
