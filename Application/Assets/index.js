@@ -96,5 +96,5 @@ function checkAnswer(event) {
 // The following function ends the quiz by opening the highscores page.
 function endQuiz() {
   localStorage.setItem("score", secs);
-  window.open("highscores.html", "_self");
+  window.open("results.html", "_self");
 }
