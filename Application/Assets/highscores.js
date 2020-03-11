@@ -29,5 +29,8 @@ var clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", () => {
   for (let i of Object.keys(localStorage)) {
     delete localStorage[i];
+  };
+  while(highscoresDiv.hasChildNodes()) {
+      highscoresDiv.removeChild(highscoresDiv.firstChild);
   }
 });

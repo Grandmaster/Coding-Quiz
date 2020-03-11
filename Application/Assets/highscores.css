@@ -11,4 +11,5 @@ p, #content-header {
 }
 #display-highscores {
     background-color: rgb(209, 164, 207);
+    margin-bottom: 20px;
 }
