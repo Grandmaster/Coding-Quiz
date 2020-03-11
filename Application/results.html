@@ -21,7 +21,7 @@
   </head>
   <body>
     <nav class="nav justify-content-between">
-      <p class="nav-item" id="highscores">View highscores</p>
+      <a href='highscores.html' class="nav-item" id="highscores">View highscores</a>
       <p id="Timer">Time: <span id="time-left"></span> secs</p>
     </nav>
     <div class="container">
@@ -41,11 +41,12 @@
       </div>
       <div class="row justify-content-md-center">
         <div class="col-md-4 d-flex justify-content-center">
-          <form>
-              <label for='initals-form'>
+          <form id='initials-form'>
+              <label for='initials-input'>
                   Enter your intials here: 
               </label>
-              <input placeholder='Enter Initials...' id='initials-form' />
+              <input placeholder='Enter Initials...' id='initials-input' />
+              <button class='btn btn-primary btn-sm'>Submit</button>
           </form>
         </div>
       </div>

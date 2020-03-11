@@ -1,4 +1,4 @@
-// Code for the highscores page.
+// Code for the results page.
 // ===============================
 
 // This bit of code retrieves the score from local storage.
@@ -10,4 +10,13 @@ scoreSpan.innerHTML = score;
 var backButton = document.getElementById('return');
 backButton.addEventListener('click', () => {
     window.open('index.html', '_self');
+})
+
+// Stores the user's score and initials in local storage
+var formElement = document.getElementById('initials-form');
+var inputElement = document.getElementById('initials-input');
+formElement.addEventListener('submit', (event) => {
+    event.preventDefault();
+    localStorage.setItem(inputElement.value, '' + score); 
+    inputElement.value = '';
 })
