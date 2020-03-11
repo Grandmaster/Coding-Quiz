@@ -42,7 +42,7 @@ function displayQuestion(question, options) {
 startButton = document.getElementById("start");
 count = 0;
 startButton.addEventListener("click", () => {
-  // beginCountDown();
+  beginCountDown();
   displayQuestion(questions[count], options[count]);
   styleButtons();
   var intro = document.getElementById("intro");
@@ -75,7 +75,7 @@ choicesElement.addEventListener("click", event => {
 });
 
 // Function checks if the user picked the right answer or not, and displays the result
-// on the screen.
+// on the screen, and takes it away after a few seconds.
 function checkAnswer(event) {
   var answerKey = answers[count - 1];
   var choiceKey = event.target.getAttribute("data-index");
@@ -90,7 +90,16 @@ function checkAnswer(event) {
   } else {
     result.textContent = "Wrong!";
     answerDiv.appendChild(result);
+    secs = secs - 10;
+    time.style.color = 'red';
+    setTimeout(() => {
+      time.style.color = 'white';
+    }, 3000)
   }
+  setTimeout(function(){
+    answerDiv.removeChild(answerDiv.lastChild);
+    answerDiv.style.borderTop = '0px'
+  }, 1000)
 }
 
 // The following function ends the quiz by opening the highscores page.

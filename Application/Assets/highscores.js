@@ -5,10 +5,13 @@
 function displayHighScores() {
   c = 0;
   for (let i of Object.keys(localStorage)) {
-    c++;
-    var highscoreElement = document.createElement("p");
-    highscoreElement.textContent = c + ": " + i + " - " + localStorage[i];
-    highscoresDiv.appendChild(highscoreElement);
+    if (i == "score") {
+    } else {
+      c++;
+      var highscoreElement = document.createElement("p");
+      highscoreElement.textContent = c + ": " + i + " - " + localStorage[i];
+      highscoresDiv.appendChild(highscoreElement);
+    }
   }
 }
 // This code loads all previous highscores.
@@ -29,8 +32,8 @@ var clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", () => {
   for (let i of Object.keys(localStorage)) {
     delete localStorage[i];
-  };
-  while(highscoresDiv.hasChildNodes()) {
-      highscoresDiv.removeChild(highscoresDiv.firstChild);
+  }
+  while (highscoresDiv.hasChildNodes()) {
+    highscoresDiv.removeChild(highscoresDiv.firstChild);
   }
 });
