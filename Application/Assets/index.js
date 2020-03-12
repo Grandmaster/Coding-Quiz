@@ -9,7 +9,7 @@ function beginCountDown() {
   var gameTime = setInterval(() => {
     time.textContent = secs;
     secs--;
-    if (secs == 0) {
+    if (secs <= 0) {
       clearInterval(gameTime);
       endQuiz();
     }
@@ -25,7 +25,7 @@ function displayQuestion(question, options) {
   while (choicesElement.hasChildNodes()) {
     choicesElement.removeChild(choicesElement.firstChild);
   }
-  for (var i = 1; i < 5; i++) {
+  for (let i of Object.keys(options)) {
     var choice = options[i];
     var individualChoice = document.createElement("li");
     var choiceButton = document.createElement("button");
@@ -80,7 +80,6 @@ function checkAnswer(event) {
   var answerKey = answers[count - 1];
   var choiceKey = event.target.getAttribute("data-index");
   var answerDiv = document.getElementById("answers");
-  answerDiv.removeChild(answerDiv.lastChild);
   answerDiv.style.borderTop = '1px solid';
   var result = document.createElement("h3");
   result.style.fontStyle = "italic";
@@ -91,6 +90,11 @@ function checkAnswer(event) {
     result.textContent = "Wrong!";
     answerDiv.appendChild(result);
     secs = secs - 10;
+    if (secs <= 0){
+      secs = 0;
+      endQuiz();
+    } 
+    time.textContent = secs
     time.style.color = 'red';
     setTimeout(() => {
       time.style.color = 'white';
