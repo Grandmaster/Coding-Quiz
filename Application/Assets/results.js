@@ -12,7 +12,8 @@ backButton.addEventListener('click', () => {
     window.open('index.html', '_self');
 })
 
-// Stores the user's score and initials in local storage
+// Stores the user's score and initials in local storage and opens 
+// the highscores page when form is submitted
 var formElement = document.getElementById('initials-form');
 var inputElement = document.getElementById('initials-input');
 formElement.addEventListener('submit', (event) => {
