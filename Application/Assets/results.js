@@ -19,4 +19,5 @@ formElement.addEventListener('submit', (event) => {
     event.preventDefault();
     localStorage.setItem(inputElement.value, '' + score); 
     inputElement.value = '';
+    window.open('highscores.html', '_self');
 })
