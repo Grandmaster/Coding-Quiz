@@ -1,44 +1,16 @@
 # Coding-Quiz
 
-## 04 Web APIs: Code Quiz
+The code in this repo designs a site that quizzes users on their basic knowledge of HTML, CSS and Javascript. It allows users to take the quiz completely online, and gives them a chance to record their score at the end of the quiz. The site can be found here: ![Coding Quiz](https://grandmaster.github.io/Coding-Quiz).
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+## Installation
+The site can be run on any modern browser.
 
-## User Story
+## Usage
 
-```
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+Upon arriving at the site, the user can read some info on the quiz process, and click on the button at the center of the page to start the quiz. Once the quiz has started, each question will be displayed on the window, and the options to answer the question show up as buttons under the question. If the user gets a question correct, they move on to the next question. If not, the user takes a time penalty and continues the quiz. The score at the end of the quiz is actually equal to the time left, so the quicker the quiz is completed, the higher the score.
 
-## Acceptance Criteria
-
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-```
+## Demonstration
 
 The following animation demonstrates the application functionality:
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
-
-### Review
-
-You are required to submit the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+![code quiz](Application/Assets/04-web-apis-homework-demo.gif)
