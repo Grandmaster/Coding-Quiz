@@ -13,4 +13,4 @@ Upon arriving at the site, the user can read some info on the quiz process, and 
 
 The following animation demonstrates the application functionality:
 
-![code quiz](Application/Assets/04-web-apis-homework-demo.gif)
+![code quiz](Assets/04-web-apis-homework-demo.gif)
