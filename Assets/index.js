@@ -66,6 +66,7 @@ function styleButtons() {
 choicesElement.addEventListener("click", event => {
   count++;
   if (count == questions.length) {
+    checkAnswer(event);
     endQuiz();
   } else {
     checkAnswer(event);
