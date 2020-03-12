@@ -1,6 +1,6 @@
 # Coding-Quiz
 
-The code in this repo designs a site that quizzes users on their basic knowledge of HTML, CSS and Javascript. It allows users to take the quiz completely online, and gives them a chance to record their score at the end of the quiz. The site can be found here: ![Coding Quiz](https://grandmaster.github.io/Coding-Quiz).
+The code in this repo designs a site that quizzes users on their basic knowledge of HTML, CSS and Javascript. It allows users to take the quiz completely online, and gives them a chance to record their score at the end of the quiz. The site can be found here: [Coding Quiz](https://grandmaster.github.io/Coding-Quiz).
 
 ## Installation
 The site can be run on any modern browser.
