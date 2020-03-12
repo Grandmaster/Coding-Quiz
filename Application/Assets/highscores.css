@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+    top: 40px;
+}
+p, #content-header {
+    text-align: center;
+}
+.btn.btn-primary {
+    background-color: purple;
+    color: white;
+}
+#display-highscores {
+    background-color: rgb(209, 164, 207);
+    margin-bottom: 20px;
+}

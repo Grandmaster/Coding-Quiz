@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Assets/index.css" />
+  </head>
+  <body>
+    <nav class="nav justify-content-between">
+      <a href="highscores.html" class="nav-item" id="highscores"
+        >View highscores</a
+      >
+      <p id="Timer">Time: <span id="time-left"></span> secs</p>
+    </nav>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-6">
+          <h1 id="content-header">
+            Code Quiz
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md" id="content">
+          <p id="intro">
+            You are about to begin a coding quiz that will check your basic
+            understanding of HTML, CSS and Javascript. The questions will be
+            displayed on the screen, and you will have 60 seconds to complete
+            the quiz, at the end of which you will be given a chance to record
+            your score. If you're ready, then let's begin!
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-md-4 d-flex justify-content-center" id="answers">
+          <button type="button" class="btn btn-primary" id="start">
+            Start Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="Assets/quiz.js" async defer></script>
+    <script src="Assets/index.js" async defer></script>
+  </body>
+</html>

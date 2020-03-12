@@ -1,0 +1,21 @@
+p, #content-header {
+    text-align: center;
+}
+.btn.btn-primary {
+    background-color: purple;
+    color: white;
+}
+.row:last-child {
+    border-top: 1px solid;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+nav {
+    height: 50px;
+}
+nav > * {
+    background-color: lightskyblue;
+    color: white;
+    margin-bottom: 0;
+    padding: 10px;
+}

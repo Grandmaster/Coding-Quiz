@@ -1,0 +1,16 @@
+p, #content-header {
+    text-align: center;
+}
+.btn.btn-primary {
+    background-color: purple;
+    color: white;
+}
+nav {
+    height: 50px;
+}
+nav > * {
+    background-color: lightskyblue;
+    color: white;
+    margin-bottom: 0;
+    padding: 10px;
+}
